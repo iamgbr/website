@@ -13,8 +13,25 @@ $(document).ready(function () {
 	var mySwiper = new Swiper ('.gallery-slider', {
 		// Optional parameters
 		// Disable preloading of all images
-		preloadImages: false,
+		preloadImages: true,
 		// Enable lazy loading
-		lazyLoading: true
+		lazyLoading: true,
+		// Pagination params
+		slidesPerView: 3,
+		pagination: '.swiper-pagination',
+        paginationClickable: true,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 30,
+        breakpoints: {
+            1280: {
+                slidesPerView: 2,
+                spaceBetween: 30
+            },
+            640: {
+                slidesPerView: 1,
+                spaceBetween: 20
+            }
+        }
 	});
 });
