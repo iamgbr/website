@@ -283,13 +283,13 @@ hr.small {
 /* Map */
 
 .map-container {
-    height: 500px;
+    height: 400px;
     position: relative;
 }
 
 @media(max-width:768px) {
     .map {
-        height: 75%;
+        height: 60%;
     }
 }
 
@@ -301,6 +301,11 @@ hr.small {
     bottom: 0;
     left: 0;
     right: 0;
+}
+
+.gallery-container {
+    height: 500px;
+    position: relative;
 }
 
 /* Footer */
