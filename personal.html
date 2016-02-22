@@ -18,6 +18,7 @@
     <link href="css/stylish-portfolio.css" rel="stylesheet">
     <link href="css/font-mfizz.css" rel=stylesheet>
     <link href="css/swiper.min.css" rel=stylesheet>
+    <link href="css/leaflet.css" rel=stylesheet>
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -29,8 +30,13 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.14.2/mapbox-gl.js'></script>
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.14.2/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Mapbox GL -->
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.11.2/mapbox-gl.css" rel='stylesheet' />
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.11.2/mapbox-gl.js"></script>
+    <script src="js/leaflet.js"></script>
 </head>
 
 <body>
@@ -90,33 +96,62 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide">
+                <div class="swiper-slide slide-condo">
                     <figure>
                         <img data-src="./img/galleries/thumbs/thumb_condo.jpg" class="swiper-lazy">
                     </figure>
                     <div class="text-overlay-img">
-                        <h3>condo</h3>
+                        <h3>Condo</h3>
                         <p>Over the rooftop of my condo in a great day of weather</p>
+                        <a class="btn btn-dark">View on Map</a>
                     </div>
                     <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                 </div>
-                <div class="swiper-slide">
+
+                <div class="swiper-slide slide-kohmak">
                     <figure>
                         <img data-src="./img/galleries/thumbs/thumb_kohmak.jpg" class="swiper-lazy">
                     </figure>
                     <div class="text-overlay-img">
                         <h3>Koh Mak</h3>
                         <p>A great trip with my frineds in a low carbon destination</p>
+                        <a class="btn btn-dark">View on Map</a>
                     </div>
                     <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                 </div>
-                <div class="swiper-slide">
+
+                <div class="swiper-slide slide-luangprabang">
                     <figure>
                         <img data-src="./img/galleries/thumbs/thumb_luangprabang.jpg" class="swiper-lazy">
                     </figure>
                     <div class="text-overlay-img">
                         <h3>LuangPraBang</h3>
                         <p>Slowlife, a nap trip in LuangPraBang</p>
+                        <a class="btn btn-dark">View on Map</a>
+                    </div>
+                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </div>
+
+                <div class="swiper-slide slide-museumsiam">
+                    <figure>
+                        <img data-src="./img/galleries/thumbs/thumb_museumsiam.jpg" class="swiper-lazy">
+                    </figure>
+                    <div class="text-overlay-img">
+                        <h3>Museum Siam</h3>
+                        <p>The giant city in BKK. The special event at Museum Siam</p>
+                        <a class="btn btn-dark">View on Map</a>
+                    </div>
+                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </div>
+
+                <div class="swiper-slide slide-samed">
+                    <figure>
+                        <img data-src="./img/galleries/thumbs/thumb_samed.jpg" class="swiper-lazy">
+                    </figure>
+                    <div class="text-overlay-img">
+                        <h3>Samet</h3>
+                        <p>Samet trip with the gang. Fun Fun Fun, ever . . . .</p>
+                        <a class="btn btn-dark">View on Map</a>
                     </div>
                     <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                 </div>
@@ -190,9 +225,6 @@
     <!-- To be changed soon-->
     <!--<script type="js/require.js"></script> -->
 
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
@@ -200,12 +232,14 @@
     <script src="js/components/scrolling.js"></script>
     <script src="js/components/menu.js"></script>
     <script src="js/components/social.js"></script>
-
     <script src="js/pages/personal.js"></script>
-    
     <script src="js/components/ga.js"></script>
-
     <script src="js/swiper.jquery.min.js"></script>
+    <script src="js/leaflet-mapbox-gl.js"></script>
+    <script src="js/bouncemarker.js"></script>
+    
+
+    
 </body>
 
 </html>

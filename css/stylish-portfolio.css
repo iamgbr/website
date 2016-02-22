@@ -303,6 +303,14 @@ hr.small {
     right: 0;
 }
 
+.leaflet-popup-content {
+    text-align: center;
+}
+
+.leaflet-popup-content p.popup-p {
+    margin: 5px 0;
+}
+
 .gallery-container,
 .gallery-slider {
     position: relative;
