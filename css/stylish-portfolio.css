@@ -205,6 +205,39 @@ hr.small {
     margin-bottom: 30px;
 }
 
+/* Social networks*/
+.color-fb {
+    color: #3b5998;
+}
+
+.color-tw {
+    color: #55acee;
+}
+
+.color-ig {
+    color : #9a5d00;
+}
+
+.color-li {
+    color :#0077B5;
+}
+
+.color-tb {
+    color:#0e4c61;
+}
+
+.color-fk {
+    color: #ff0084;
+}
+
+.color-ggp {
+    color: #d62d20;
+}
+
+.color-yt {
+    color: #cc181e;
+}
+
 /* Callout */
 
 .callout {
@@ -249,14 +282,25 @@ hr.small {
 
 /* Map */
 
-.map {
+.map-container {
     height: 500px;
+    position: relative;
 }
 
 @media(max-width:768px) {
     .map {
         height: 75%;
     }
+}
+
+.map-body {
+    position: absolute;
+    width:100%;
+    height: 100%;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 /* Footer */

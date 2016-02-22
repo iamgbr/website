@@ -12,7 +12,7 @@
     <title>IAMGBR.xyz :: Where me can be myself . . .</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="css/stylish-portfolio.css" rel="stylesheet">
@@ -28,7 +28,8 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.14.2/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.14.2/mapbox-gl.css' rel='stylesheet' />
 </head>
 
 <body>
@@ -129,42 +130,62 @@
     </aside>
 
     <!-- Map -->
-    <section id="contact" class="map">
-        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-        <br />
-        <small>
-            <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-        </small>
-        </iframe>
+    <section id="map-container" class="map-container">
+        <div id='map-body' class="map-body"></div>
     </section>
+
 
     <!-- Footer -->
     <footer>
-        <div class="container">
+        <div id="contact" class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1 text-center">
-                    <h4><strong>Start Bootstrap</strong>
+                    <h4><strong>Contact</strong>
                     </h4>
-                    <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                    <p>299/548 The President Condo, Phetkasem Rd.<br>PakKlongPasiCharoen, PasiCharoen, BKK 10160</p>
                     <ul class="list-unstyled">
-                        <li><i class="fa fa-phone fa-fw"></i> (123) 456-7890</li>
-                        <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:name@example.com">name@example.com</a>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i> (66) 873585066</li>
+                        <li>
+                            <i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:pongsakorn.jaiban@gmail.com">pongsakorn.jaiban@gmail.com</a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/intent/tweet?screen_name=IAMGBR" class="twitter-mention-button" data-related="IAMGBR">Tweet to @IAMGBR</a> 
+                            <a href="https://twitter.com/IAMGBR" class="twitter-follow-button" data-show-count="false">Follow @IAMGBR</a>
+                        </li>
+                        <li>
+                            <div class="fb-share-button" data-href="http://iamgbr.esy.es" data-layout="button_count"></div>
                         </li>
                     </ul>
                     <br>
                     <ul class="list-inline">
                         <li>
-                            <a href="#"><i class="fa fa-facebook fa-fw fa-3x"></i></a>
+                            <a href="https://facebook.com/zoldyk"><i class="fa fa-facebook fa-fw fa-3x color-fb"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-twitter fa-fw fa-3x"></i></a>
+                            <a href="https://twitter.com/IAMGBR"><i class="fa fa-twitter fa-fw fa-3x color-tw"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-dribbble fa-fw fa-3x"></i></a>
+                            <a href="https://plus.google.com/u/0/+PongsakornJaiban"><i class="fa fa-google-plus fa-fw fa-3x color-ggp"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/iamgbr/"><i class="fa fa-instagram fa-fw fa-3x color-ig"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/pongsakornjaiban"><i class="fa fa-linkedin fa-fw fa-3x color-li"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.flickr.com/photos/iamgbr/"><i class="fa fa-flickr fa-fw fa-3x color-fk"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://iamgbr.tumblr.com"><i class="fa fa-tumblr fa-fw fa-3x color-tb"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UCUiD8Oejs2vYwVcj2CUYNZw"><i class="fa fa-youtube-play fa-fw fa-3x color-yt"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
-                    <p class="text-muted">Copyright &copy; Your Website 2014</p>
+                    <p class="text-muted">Copyright &copy; Pongsakorn Jaiban 2016</p>
                 </div>
             </div>
         </div>
@@ -176,38 +197,11 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Custom Theme JavaScript -->
-    <script>
-    // Closes the sidebar menu
-    $("#menu-close").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Opens the sidebar menu
-    $("#menu-toggle").click(function(e) {
-        e.preventDefault();
-        $("#sidebar-wrapper").toggleClass("active");
-    });
-
-    // Scrolls to the selected menu item on the page
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
-    });
-    </script>
-
+    <!-- Page JS -->
+    <script src="js/pages/scrolling.js"></script>
+    <script src="js/pages/menu.js"></script>
+    <script src="js/pages/social.js"></script>
+    <script src="js/pages/personal.js"></script>
 </body>
 
 </html>
