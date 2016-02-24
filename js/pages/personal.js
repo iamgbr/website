@@ -17,7 +17,7 @@ $(document).ready(function () {
 	}).addTo(map);
 
 	//initialize swiper when document ready  
-	mySwiper = new Swiper ('.gallery-slider', {
+	mySwiper = new Swiper ('.swiper-container', {
 		// Optional parameters
 		// Disable preloading of all images
 		preloadImages: true,
@@ -99,6 +99,7 @@ var createMarker = function(pos){
 	    iconRetinaUrl: './img/marker-icon-2x.png',
 	    shadowUrl: './img/marker-shadow.png',
 	    iconAnchor: [13, 41],
+	    iconSize: [25, 41],
 	    popupAnchor: [0, -37],
 	});
 	var bounceDuration = (Math.random() * 300) + 400;
