@@ -243,7 +243,7 @@ hr.small {
 .callout {
     display: table;
     width: 100%;
-    height: 400px;
+    height: 200px;
     color: #fff;
     background: url(../img/callout.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
@@ -251,7 +251,6 @@ hr.small {
     background-size: cover;
     -o-background-size: cover;
 }
-
 /* Portfolio */
 
 .portfolio {
@@ -357,4 +356,33 @@ hr.small {
 
 footer {
     padding: 100px 0;
+}
+
+
+/* Media Adjustion*/
+
+@media screen and (min-width: 512px) {
+    .callout {
+        height: 200px;
+    }
+
+    .map-container {
+        height: 250px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .callout {
+        height: 250px;
+    }
+    .map-container {
+        height: 300px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .callout {
+        height: 300px;
+    }
+    .map-container {
+        height: 400px;
+    }
 }
