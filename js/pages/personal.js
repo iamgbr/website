@@ -91,6 +91,8 @@ $(document).ready(function () {
 	    moveMapTo('samed');
 	});
 
+    $('[data-toggle="tooltip"]').tooltip(); 
+     $('#menu-toggle').addClass('animated bounceInDown');
 });
 
 var createMarker = function(pos){

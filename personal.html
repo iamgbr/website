@@ -19,6 +19,7 @@
     <link href="css/font-mfizz.css" rel=stylesheet>
     <link href="css/swiper.min.css" rel=stylesheet>
     <link href="css/leaflet.css" rel=stylesheet>
+    <link href="css/animate.css" rel=stylesheet>
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -58,6 +59,9 @@
             <li>
                 <a href="#personal" onclick = $("#menu-close").click(); >Personal Life</a>
             </li>
+           <li>
+                <a href="http://blog.iamgbr.xyz" onclick = $("#menu-close").click(); >Blog</a>
+            </li>
             <li>
                 <a href="./index.html" onclick = $("#menu-close").click(); >Portfolio</a>
             </li>
@@ -73,6 +77,82 @@
             <h1>Activities</h1>
         </div>
     </aside>
+
+
+    <!-- Gallery Slider -->
+    <section id="gallery-container" class="gallery-container">
+        <div id="gallery-slider" class="gallery-slider swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide slide-condo">
+                    <figure>
+                        <img data-src="./img/galleries/thumbs/thumb_condo.jpg" class="swiper-lazy">
+                    </figure>
+                    <div class="text-overlay-img">
+                        <h3>Condo</h3>
+                        <p>Over the rooftop of my condo in a great day of weather</p>
+                        <a href='#gallery-container' class="btn btn-dark">View on Map</a>
+                    </div>
+                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </div>
+
+                <div class="swiper-slide slide-kohmak">
+                    <figure>
+                        <img data-src="./img/galleries/thumbs/thumb_kohmak.jpg" class="swiper-lazy">
+                    </figure>
+                    <div class="text-overlay-img">
+                        <h3>Koh Mak</h3>
+                        <p>A great trip with my frineds in a low carbon destination</p>
+                        <a href='#gallery-container' class="btn btn-dark">View on Map</a>
+                    </div>
+                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </div>
+
+                <div class="swiper-slide slide-luangprabang">
+                    <figure>
+                        <img data-src="./img/galleries/thumbs/thumb_luangprabang.jpg" class="swiper-lazy">
+                    </figure>
+                    <div class="text-overlay-img">
+                        <h3>LuangPraBang</h3>
+                        <p>Slowlife, a nap trip in LuangPraBang</p>
+                        <a href='#gallery-container' class="btn btn-dark">View on Map</a>
+                    </div>
+                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </div>
+
+                <div class="swiper-slide slide-museumsiam">
+                    <figure>
+                        <img data-src="./img/galleries/thumbs/thumb_museumsiam.jpg" class="swiper-lazy">
+                    </figure>
+                    <div class="text-overlay-img">
+                        <h3>Museum Siam</h3>
+                        <p>The giant city in BKK. The special event at Museum Siam</p>
+                        <a href='#gallery-container' class="btn btn-dark">View on Map</a>
+                    </div>
+                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </div>
+
+                <div class="swiper-slide slide-samed">
+                    <figure>
+                        <img data-src="./img/galleries/thumbs/thumb_samed.jpg" class="swiper-lazy">
+                    </figure>
+                    <div class="text-overlay-img">
+                        <h3>Samet</h3>
+                        <p>Samet trip with the gang. Fun Fun Fun, ever . . . .</p>
+                        <a href='#gallery-container' class="btn btn-dark">View on Map</a>
+                    </div>
+                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                </div>
+            </div>
+            <!-- pagination -->
+            <div class="swiper-pagination"></div>
+            
+            <!-- navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
 
     <!-- Map -->
     <section id="map-container" class="map-container">
@@ -90,80 +170,6 @@
         </div>
     </section>
 
-    <!-- Gallery Slider -->
-    <section id="gallery-container" class="gallery-container">
-        <div id="gallery-slider" class="gallery-slider swiper-container">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-                <!-- Slides -->
-                <div class="swiper-slide slide-condo">
-                    <figure>
-                        <img data-src="./img/galleries/thumbs/thumb_condo.jpg" class="swiper-lazy">
-                    </figure>
-                    <div class="text-overlay-img">
-                        <h3>Condo</h3>
-                        <p>Over the rooftop of my condo in a great day of weather</p>
-                        <a class="btn btn-dark">View on Map</a>
-                    </div>
-                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-
-                <div class="swiper-slide slide-kohmak">
-                    <figure>
-                        <img data-src="./img/galleries/thumbs/thumb_kohmak.jpg" class="swiper-lazy">
-                    </figure>
-                    <div class="text-overlay-img">
-                        <h3>Koh Mak</h3>
-                        <p>A great trip with my frineds in a low carbon destination</p>
-                        <a class="btn btn-dark">View on Map</a>
-                    </div>
-                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-
-                <div class="swiper-slide slide-luangprabang">
-                    <figure>
-                        <img data-src="./img/galleries/thumbs/thumb_luangprabang.jpg" class="swiper-lazy">
-                    </figure>
-                    <div class="text-overlay-img">
-                        <h3>LuangPraBang</h3>
-                        <p>Slowlife, a nap trip in LuangPraBang</p>
-                        <a class="btn btn-dark">View on Map</a>
-                    </div>
-                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-
-                <div class="swiper-slide slide-museumsiam">
-                    <figure>
-                        <img data-src="./img/galleries/thumbs/thumb_museumsiam.jpg" class="swiper-lazy">
-                    </figure>
-                    <div class="text-overlay-img">
-                        <h3>Museum Siam</h3>
-                        <p>The giant city in BKK. The special event at Museum Siam</p>
-                        <a class="btn btn-dark">View on Map</a>
-                    </div>
-                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-
-                <div class="swiper-slide slide-samed">
-                    <figure>
-                        <img data-src="./img/galleries/thumbs/thumb_samed.jpg" class="swiper-lazy">
-                    </figure>
-                    <div class="text-overlay-img">
-                        <h3>Samet</h3>
-                        <p>Samet trip with the gang. Fun Fun Fun, ever . . . .</p>
-                        <a class="btn btn-dark">View on Map</a>
-                    </div>
-                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                </div>
-            </div>
-            <!-- pagination -->
-            <div class="swiper-pagination"></div>
-            
-            <!-- navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-        </div>
-    </section>
 
 
     <!-- Footer -->
@@ -178,41 +184,41 @@
                         <li>
                             <i class="fa fa-phone fa-fw"></i> (66) 873585066</li>
                         <li>
-                            <i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:pongsakorn.jaiban@gmail.com">pongsakorn.jaiban@gmail.com</a>
+                            <i class="fa fa-envelope-o fa-fw"></i>  <a  data-toggle="tooltip" title="Email! Email me :)" href="mailto:pongsakorn.jaiban@gmail.com">pongsakorn.jaiban@gmail.com</a>
+                        </li>
+                        <li class="space-top">
+                            <a  data-toggle="tooltip" title="Twitter! Yeah! mentioned me here" href="https://twitter.com/intent/tweet?screen_name=IAMGBR" class="twitter-mention-button" data-related="IAMGBR">Tweet to @IAMGBR</a> 
+                            <a  data-toggle="tooltip" title="Twitter! Interested? follow me here" href="https://twitter.com/IAMGBR" class="twitter-follow-button" data-show-count="false">Follow @IAMGBR</a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/intent/tweet?screen_name=IAMGBR" class="twitter-mention-button" data-related="IAMGBR">Tweet to @IAMGBR</a> 
-                            <a href="https://twitter.com/IAMGBR" class="twitter-follow-button" data-show-count="false">Follow @IAMGBR</a>
-                        </li>
-                        <li>
-                            <div class="fb-share-button" data-href="http://iamgbr.esy.es" data-layout="button_count"></div>
+                            <div  data-toggle="tooltip" title="Facebook! Share what you see" class="fb-share-button" data-href="http://iamgbr.esy.es" data-layout="button_count"></div>
                         </li>
                     </ul>
                     <br>
                     <ul class="list-inline">
                         <li>
-                            <a href="https://facebook.com/zoldyk"><i class="fa fa-facebook fa-fw fa-3x color-fb"></i></a>
+                            <a data-toggle="tooltip" title="Facebook! Let's become a friend" href="https://facebook.com/zoldyk"><i class="fa fa-facebook fa-fw fa-3x color-fb"></i></a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/IAMGBR"><i class="fa fa-twitter fa-fw fa-3x color-tw"></i></a>
+                            <a data-toggle="tooltip" title="Twitter! Caching up the trend" href="https://twitter.com/IAMGBR"><i class="fa fa-twitter fa-fw fa-3x color-tw"></i></a>
                         </li>
                         <li>
-                            <a href="https://plus.google.com/u/0/+PongsakornJaiban"><i class="fa fa-google-plus fa-fw fa-3x color-ggp"></i></a>
+                            <a data-toggle="tooltip" title="Google Plus! Yeah, I have it one"  href="https://plus.google.com/u/0/+PongsakornJaiban"><i class="fa fa-google-plus fa-fw fa-3x color-ggp"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.instagram.com/iamgbr/"><i class="fa fa-instagram fa-fw fa-3x color-ig"></i></a>
+                            <a data-toggle="tooltip" title="Instagram! Share what I have seen" href="https://www.instagram.com/iamgbr/"><i class="fa fa-instagram fa-fw fa-3x color-ig"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/pongsakornjaiban"><i class="fa fa-linkedin fa-fw fa-3x color-li"></i></a>
+                            <a data-toggle="tooltip" title="LinkedIn! My Professional profile"  href="https://www.linkedin.com/in/pongsakornjaiban"><i class="fa fa-linkedin fa-fw fa-3x color-li"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.flickr.com/photos/iamgbr/"><i class="fa fa-flickr fa-fw fa-3x color-fk"></i></a>
+                            <a data-toggle="tooltip" title="Flickr! Big lightroom galleries of mine" href="https://www.flickr.com/photos/iamgbr/"><i class="fa fa-flickr fa-fw fa-3x color-fk"></i></a>
                         </li>
                         <li>
-                            <a href="https://iamgbr.tumblr.com"><i class="fa fa-tumblr fa-fw fa-3x color-tb"></i></a>
+                            <a data-toggle="tooltip" title="Tumblr! Blogger life starts here"  href="https://iamgbr.tumblr.com"><i class="fa fa-tumblr fa-fw fa-3x color-tb"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.youtube.com/channel/UCUiD8Oejs2vYwVcj2CUYNZw"><i class="fa fa-youtube-play fa-fw fa-3x color-yt"></i></a>
+                            <a data-toggle="tooltip" title="Youtube! Broadcasting myself" href="https://www.youtube.com/channel/UCUiD8Oejs2vYwVcj2CUYNZw"><i class="fa fa-youtube-play fa-fw fa-3x color-yt"></i></a>
                         </li>
                     </ul>
                     <hr class="small">
@@ -221,6 +227,7 @@
             </div>
         </div>
     </footer>
+
 
     <!-- To be changed soon-->
     <!--<script type="js/require.js"></script> -->
