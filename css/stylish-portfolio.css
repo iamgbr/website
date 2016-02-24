@@ -176,6 +176,13 @@ hr.small {
     height: 100%;
 }
 
+.card {
+    width: 75%;
+    margin: auto;
+    /*border: 10px solid #000000;*/
+    padding: 40px;
+}
+
 .header-bg {
     background: url(../img/bg.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
