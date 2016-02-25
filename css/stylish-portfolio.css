@@ -184,7 +184,6 @@ hr.small {
     width: 75%;
     margin: auto;
     /*border: 10px solid #000000;*/
-    padding: 40px;
 }
 
 .header-bg {
@@ -386,6 +385,10 @@ footer {
     .map-container {
         height: 250px;
     }
+
+    .header .card {
+        padding: 0;
+    }
 }
 @media screen and (min-width: 768px) {
     .callout {
@@ -394,6 +397,9 @@ footer {
     .map-container {
         height: 300px;
     }
+    .header .card {
+        padding: 0;
+    }
 }
 @media screen and (min-width: 1024px) {
     .callout {
@@ -401,5 +407,8 @@ footer {
     }
     .map-container {
         height: 400px;
+    }
+    .header .card {
+        padding: 40px;
     }
 }
