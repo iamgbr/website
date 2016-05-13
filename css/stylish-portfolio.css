@@ -336,6 +336,8 @@ hr.small {
     margin-bottom: 10px;
 }
 
+
+
 .text-overlay-img {
     position: absolute;
     top: 0;
@@ -400,6 +402,13 @@ footer {
     .header .card {
         padding: 0;
     }
+
+    .fix-width-container
+    {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 @media screen and (min-width: 1024px) {
     .callout {
@@ -410,5 +419,12 @@ footer {
     }
     .header .card {
         padding: 40px;
+    }
+
+    .fix-width-container
+    {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
