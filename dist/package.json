@@ -1,0 +1,21 @@
+{
+	"name" : "IAMGBR_Website",
+	"author" : "Pongsakorn",
+	"dependencies" : {
+		"gulp" : "*",
+		"gulp-cli" : "*",
+		"gulp-uglify" : "*",
+		"gulp-concat" : "*",
+		"gulp-minify-css" : "*",
+		"gulp-sass" : "*",
+		"browser-sync" : "*",
+		"gulp-watch" : "*",
+		"gulp-concat" : "*",
+		"pump" : "*",
+		"colors" : "*",
+		"jquery" : "*",
+		"gulp-sequence" : "*",
+		"gulp-add-src" : "*",
+		"streamqueue" : "*"
+	}
+}

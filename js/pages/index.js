@@ -3,3 +3,4 @@ $(document).ready(function(){
     $('.text-vertical-center').removeClass('hide').addClass('animated rollIn');
      $('#menu-toggle').addClass('animated bounceInDown');
 });
+
