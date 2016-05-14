@@ -8,15 +8,18 @@ var gulpSequence = require('gulp-sequence');
 var $ = require('jquery');
 var addsrc = require('gulp-add-src');
 var streamqueue  = require('streamqueue');
+var sass = require('gulp-sass');
 
 
 var prodPath = "";
 
 
-// Gulp tasks
-gulp.task('default', function() {
+/////////////////////////////////////// Default task ///////////////////////////////////////
+gulp.task('default', ['js', 'sass'],function() {
 
 });
+
+/////////////////////////////////////// General commands ///////////////////////////////////////
 
 gulp.task('js-prod', gulpSequence('js-prod-build', 'js-watch', 'js-prod-done'));
 
@@ -31,9 +34,16 @@ gulp.task('js', gulpSequence('js-dev-build', 'js-watch', 'js-dev-done'));
 gulp.task('js-dev-build', gulpSequence('set-dev', 'js-build'));
 
 gulp.task('js-dev-done', function(){
-	successMsg("JS Build for production is done");
+	successMsg("JS Build for development is done");
 });
 
+gulp.task('sass', gulpSequence('sass-build', 'sass-watch', 'sass-done'));
+
+gulp.task('sass-done', function(){
+	successMsg("SASS Build is done");
+});
+
+/////////////////////////////////////// JS ///////////////////////////////////////
 
 gulp.task('js-watch',function(){
 	stayingMsg("Keep watching JS files on " + (prodPath.length > 0 ? "PRODUCTION" : "DEVELOPMENT") + " mode");
@@ -54,12 +64,13 @@ gulp.task('js-build', function(){
     var map = ['leaflet.js', 'leaflet-mapbox-gl.js', 'bouncemarker.js' ];
     var widget = ['swiper.jquery.min.js'];
 
+
 	// Index page
 	inprogressMsg('Building index page');
 	streamqueue({ objectMode: true },
-		gulp.src(prefixAdding(libShared)),
-        gulp.src(prefixAdding(comShared)),
-        gulp.src(prefixAdding(['pages/index.js']))
+		gulp.src(jsPrefixAdding(libShared)),
+        gulp.src(jsPrefixAdding(comShared)),
+        gulp.src(jsPrefixAdding(['pages/index.js']))
     )
     .pipe(concat('index.js'))
     .pipe(gulp.dest('../js/dist/'));
@@ -67,11 +78,11 @@ gulp.task('js-build', function(){
     // Personal page
 	inprogressMsg('Building personal page');
 	streamqueue({ objectMode: true },
-		gulp.src(prefixAdding(libShared)),
-        gulp.src(prefixAdding(comShared)),
-        gulp.src(prefixAdding(map)),
-        gulp.src(prefixAdding(widget)),
-        gulp.src(prefixAdding(['pages/personal.js']))
+		gulp.src(jsPrefixAdding(libShared)),
+        gulp.src(jsPrefixAdding(comShared)),
+        gulp.src(jsPrefixAdding(map)),
+        gulp.src(jsPrefixAdding(widget)),
+        gulp.src(jsPrefixAdding(['pages/personal.js']))
     )
     .pipe(concat('personal.js'))
     .pipe(gulp.dest('../js/dist/'));
@@ -113,6 +124,52 @@ gulp.task('js-component', function(cb){
 	  );
 });
 
+/////////////////////////////////////// SCSS ///////////////////////////////////////
+
+
+gulp.task('sass-build', function () {
+	// Common SCSS files
+	var common3rdparty = ['animate.css', 'bootstrap.css', 'font-mfizz.css'];
+	var personal3rdparty = ['leaflet.css', 'swiper.min.css'];
+	var commonComponents = ['menu.scss','effect.scss', 'header.scss'];
+	var pageIndex = ['index.scss'];
+	var pagePersonal = ['personal.scss'];
+	var pageCommon = ['common.scss'];
+
+	inprogressMsg("Compiling SASS files for Index");
+	streamqueue({ objectMode: true },
+		gulp.src(cssPrefixAdding(common3rdparty,'3rdParty')),
+		gulp.src(cssPrefixAdding(commonComponents,'components')),
+        gulp.src(cssPrefixAdding(pageCommon,'pages')),
+        gulp.src(cssPrefixAdding(pageIndex,'pages'))
+    )
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(concat('index.css'))
+    .pipe(gulp.dest('../css/dist'));
+
+    inprogressMsg("Compiling SASS files for Personal");
+	streamqueue({ objectMode: true },
+		gulp.src(cssPrefixAdding(common3rdparty,'3rdParty')),
+        gulp.src(cssPrefixAdding(personal3rdparty,'3rdParty')),
+        gulp.src(cssPrefixAdding(commonComponents,'components')),
+        gulp.src(cssPrefixAdding(pageCommon,'pages')),
+        gulp.src(cssPrefixAdding(pagePersonal,'pages'))
+    )
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(concat('index.css'))
+    .pipe(gulp.dest('../css/dist'));
+
+    inprogressMsg("SASS compilation is done");
+});
+
+gulp.task('sass-watch', function () {
+	stayingMsg("Keep watching SCSS files");	
+	gulp.watch('../css/3rdParty/*.*ss', ['sass-build']);
+	gulp.watch('../css/pages/*.*ss', ['sass-build']);
+});
+
+
+/////////////////////////////////////// Environments ///////////////////////////////////////
 
 gulp.task('set-prod', function(){
 	inprogressMsg('Set path to production');
@@ -124,12 +181,9 @@ gulp.task('set-dev',function(){
 	prodPath = '';
 });
 
-gulp.task('scss', function(){
-	
-});
 
 
-
+/////////////////////////////////////// Logging ///////////////////////////////////////
 
 // Msgs
 var 
@@ -154,10 +208,25 @@ var
 		console.log(msg.grey);
 	},
 
-	prefixAdding = function(objs) {
+	jsPrefixAdding = function(objs) {
 		var ret = [];
 		for(var i = 0; i< objs.length; i++) {
 			ret.push('../js/' + prodPath + objs[i]);
+			verboseMsg(ret[i]);
+		}
+		return ret;
+	},
+
+	cssPrefixAdding = function(objs, prefolder) {
+		var ret = [];
+
+		if(prefolder == null || prefolder == undefined)
+			prefolder = '';
+		else
+			prefolder += '/';
+
+		for(var i = 0; i< objs.length; i++) {
+			ret.push('../css/' + prefolder+ objs[i]);
 			verboseMsg(ret[i]);
 		}
 		return ret;

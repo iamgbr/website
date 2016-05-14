@@ -1,0 +1,16 @@
+.blur {
+    -o-background-size: cover;
+    -webkit-filter: blur(2px);
+    -moz-filter: blur(2px);
+    -o-filter: blur(2x);
+    -ms-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.soft-filter {
+    -webkit-filter: opacity(75%);
+    -moz-filter: opacity(75%);
+    -o-filter: opacity(2x);
+    -ms-filter: opacity(75%);
+    filter: opacity(75%);
+}

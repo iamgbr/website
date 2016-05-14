@@ -128,7 +128,7 @@ hr.small {
 }
 
 #menu-toggle {
-    z-index: 1;
+    z-index: 2048;
     position: fixed;
     top: 0;
     right: 0;
@@ -391,6 +391,11 @@ footer {
     .header .card {
         padding: 0;
     }
+
+    .fix-width-container
+    {
+        max-width: 100%;
+    }
 }
 @media screen and (min-width: 768px) {
     .callout {
@@ -405,7 +410,7 @@ footer {
 
     .fix-width-container
     {
-        max-width: 500px;
+        max-width: 768px;
         margin-left: auto;
         margin-right: auto;
     }
