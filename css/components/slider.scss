@@ -1,0 +1,44 @@
+
+.gallery-container,
+.gallery-slider {
+    position: relative;
+}
+
+.gallery-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+.text-overlay-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    padding: 0px 10px 10px 10px;
+    opacity: 0;
+    text-align: center;
+    /* Animation */
+    -webkit-transition: opacity 500ms;
+    -moz-transition: opacity 500ms;
+    -o-transition: opacity 500ms;
+    transition: opacity 500ms;
+}
+
+.swiper-slide .text-overlay-img:hover {
+    opacity: 0.5;
+}
+
+
+.swiper-slide figure img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}

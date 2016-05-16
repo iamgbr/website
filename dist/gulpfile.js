@@ -128,10 +128,20 @@ gulp.task('js-component', function(cb){
 
 
 gulp.task('sass-build', function () {
+	var ownCompiled = ['fonts.css'];
+	inprogressMsg("Compiling SASS files for Fonts");
+	streamqueue({ objectMode: true },
+        gulp.src(cssPrefixAdding('*','fonts'))
+    )
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(concat('fonts.css'))
+    .pipe(gulp.dest('../css/dist'));
+
+
 	// Common SCSS files
 	var common3rdparty = ['animate.css', 'bootstrap.css', 'font-mfizz.css'];
 	var personal3rdparty = ['leaflet.css', 'swiper.min.css'];
-	var commonComponents = ['menu.scss','effect.scss', 'header.scss'];
+	var commonComponents = ['*.scss'];
 	var pageIndex = ['index.scss'];
 	var pagePersonal = ['personal.scss'];
 	var pageCommon = ['common.scss'];
@@ -141,7 +151,8 @@ gulp.task('sass-build', function () {
 		gulp.src(cssPrefixAdding(common3rdparty,'3rdParty')),
 		gulp.src(cssPrefixAdding(commonComponents,'components')),
         gulp.src(cssPrefixAdding(pageCommon,'pages')),
-        gulp.src(cssPrefixAdding(pageIndex,'pages'))
+        gulp.src(cssPrefixAdding(pageIndex,'pages')),
+        gulp.src(cssPrefixAdding(ownCompiled,'dist'))
     )
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(concat('index.css'))
@@ -153,10 +164,11 @@ gulp.task('sass-build', function () {
         gulp.src(cssPrefixAdding(personal3rdparty,'3rdParty')),
         gulp.src(cssPrefixAdding(commonComponents,'components')),
         gulp.src(cssPrefixAdding(pageCommon,'pages')),
-        gulp.src(cssPrefixAdding(pagePersonal,'pages'))
+        gulp.src(cssPrefixAdding(pagePersonal,'pages')),
+        gulp.src(cssPrefixAdding(ownCompiled,'dist'))
     )
     .pipe(sass.sync().on('error', sass.logError))
-    .pipe(concat('index.css'))
+    .pipe(concat('personal.css'))
     .pipe(gulp.dest('../css/dist'));
 
     inprogressMsg("SASS compilation is done");

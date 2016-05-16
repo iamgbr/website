@@ -1,0 +1,38 @@
+
+.card {
+    width: 75%;
+    margin: auto;
+    /*border: 10px solid #000000;*/
+}
+
+.header-bg {
+    background: url(../../img/bg.jpg) no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -20;
+}
+
+/* About */
+
+.about {
+    padding: 50px 0;
+}
+
+/* Services */
+.list-inline a {
+    display: inline-block;
+}
+
+.services {
+    padding: 50px 0;
+}
+
+.service-item {
+    margin-bottom: 30px;
+}

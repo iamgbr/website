@@ -1,6 +1,21 @@
+.header {
+    display: table;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
 
+.header h3,h1 {
+    font-weight: 100;
+}
+
+.card {
+    width: 75%;
+    margin: auto;
+    /*border: 10px solid #000000;*/
+}
 .header-bg {
-    background: url(../img/bg.jpg) no-repeat center center scroll;
+    background: url(../../img/bg.jpg) no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
