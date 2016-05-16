@@ -9547,8 +9547,7 @@ hr.small {
 
 .card {
   width: 75%;
-  margin: auto;
-  /*border: 10px solid #000000;*/ }
+  margin: auto; }
 
 .header-bg {
   background: url(../../img/bg.jpg) no-repeat center center scroll;

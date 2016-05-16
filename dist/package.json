@@ -16,6 +16,7 @@
 		"jquery" : "*",
 		"gulp-sequence" : "*",
 		"gulp-add-src" : "*",
-		"streamqueue" : "*"
+		"streamqueue" : "*",
+		"moment" : "*"
 	}
 }

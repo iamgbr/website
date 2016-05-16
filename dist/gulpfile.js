@@ -9,6 +9,7 @@ var $ = require('jquery');
 var addsrc = require('gulp-add-src');
 var streamqueue  = require('streamqueue');
 var sass = require('gulp-sass');
+var moment = require('moment');
 
 
 var prodPath = "";
@@ -89,6 +90,7 @@ gulp.task('js-build', function(){
 
     // Done
     successMsg('Building JS is done')
+    showLastBuildTime();
 });
 
 gulp.task('js-page', function(cb){
@@ -172,12 +174,15 @@ gulp.task('sass-build', function () {
     .pipe(gulp.dest('../css/dist'));
 
     inprogressMsg("SASS compilation is done");
+    showLastBuildTime();
 });
 
 gulp.task('sass-watch', function () {
 	stayingMsg("Keep watching SCSS files");	
 	gulp.watch('../css/3rdParty/*.*ss', ['sass-build']);
 	gulp.watch('../css/pages/*.*ss', ['sass-build']);
+	gulp.watch('../css/components/*.*ss', ['sass-build']);
+	gulp.watch('../css/fonts/*.*ss', ['sass-build']);
 });
 
 
@@ -208,7 +213,7 @@ var
 	},
 
 	errorMsg = function(msg) {
-		console.log(msg.bold.underline.bold);
+		console.log(msg.red);
 	},
 	wrapMsg = function(msg) {
 		return '+++ ' + msg + ' +++';
@@ -218,6 +223,10 @@ var
 	},
 	verboseMsg = function(msg) {
 		console.log(msg.grey);
+	},
+
+	showLastBuildTime = function(){
+		errorMsg('Last Build at ' + moment().format('MMMM Do YYYY, h:mm:ss a'));
 	},
 
 	jsPrefixAdding = function(objs) {
